@@ -1,4 +1,4 @@
-<%@page import="com.bitacademy.guestbook.repository.GuestbookRepository"%>
+<%@page import="com.bitacademy.guestbook.dao.GuestbookDao"%>
 <%@page import="com.bitacademy.guestbook.vo.GuestbookVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
@@ -12,7 +12,7 @@ request.setCharacterEncoding("utf-8");
 	vo.setPassword(password);
 	vo.setContents(contents);
 	
-	new GuestbookRepository().insert(vo);
+	new GuestbookDao().insert(vo);
 	
 	response.sendRedirect("/guestbook01");
 %>
